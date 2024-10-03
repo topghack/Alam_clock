@@ -1,0 +1,201 @@
+/* 
+Designer : Ali Azarban
+Date     : 2024/07/21
+Email    : azarban4639@gail.com 
+*/
+
+@font-face{
+    font-family: 'digital';
+    src: url('fonts/digital.ttf') format('truetype'),
+    url('fonts/digital.woff') format('woff'),
+    url('fonts/digital.woff2') format('woff2');
+   }
+
+*{
+    font-family: 'digital';
+}
+body,html{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.container{
+    background: url(img/frame.png) no-repeat;
+    width: 800px;
+    height: 523px;
+    position: relative;
+
+}
+.lcdOn,
+.lcdOff{
+    position: absolute;
+    top: 62px;
+    left: 62px;
+    width: 676px;
+    height: 367px;
+    border-radius: 20px;
+    box-shadow: 0 0 44px #000 inset;
+}
+.lcdOn{
+    background-color: rgb(173, 212, 254);  
+}
+.lcdOff{
+    background-color: rgb(154, 156, 145)
+}
+.setTime{
+    font-size: 450px;
+    transform: scale(.45,.95);
+    position: absolute;
+    top: -87px;
+    left: -207px;
+    width: 941px;
+    overflow: hidden;
+}
+.setAlarm{
+    position: absolute;
+    font-size: 158px;
+    top: 0px;
+    left: 414px;
+    transform: scale(0.4,1);
+    width: 329px;
+    overflow: hidden;
+}
+.second{
+    position: absolute;
+    font-size: 158px;
+    top: 177px;
+    left: 502px;
+    transform: scale(.95,1);
+    width: 150px;
+    overflow: hidden;
+}
+.day{
+    position: absolute;
+    font-size: 60px;
+    top: 144px;
+    left: 512px;
+    width: 57px;
+    overflow: hidden;
+}
+.setAlarmTime{
+    position: absolute;
+    display: block;
+    padding: 10px;
+    background-color: rgb(212, 212, 212);
+    border-radius: 5px;
+    box-shadow: 0 0 5px #656262;
+    transition-duration: 0.5s;
+    transform: translateX(220px);
+    right: 0px;
+}
+.setAlarmTimeShow{
+    transform: translateX(0);
+
+}
+.setButton{
+    position: absolute;
+    top: 49px;
+    left: -26px;
+    background: #d4d4d4;
+    width: 16px;
+    padding: 5px;
+    color: rgb(20, 19, 19);
+    box-shadow: -2px -2px 2px #6562626e;
+    border-radius: 10px 0 0 10px;
+    cursor: pointer;
+}
+input[type='number']{
+    width: 87px;
+    font-size: 65px;
+    padding: 0;
+    border: none;
+    text-align: center;
+    background-color: rgb(212, 212, 212);
+}
+span{
+    font-size: 62px;
+    margin: 2px;
+}
+input[type='button']{
+    display: block;
+    width: 100%;
+    font-family: arial !important;
+    font-weight: bolder;
+    font-size: 18px;
+    border: none;
+    padding: 10px;
+    border-radius: 7px;
+    background-color: #5f6059;
+    color: #ededed;
+    margin-top: 5px;
+    box-shadow: 0 0 10px #000 inset;
+    text-shadow: 0 0 2px #000;
+    cursor: pointer;
+}
+.controlBtn{
+    position: absolute;
+    background-color: rgb(156, 155, 153);
+    padding: 20px;
+    border-radius: 15px 0 0 15px;
+    box-shadow: 0 0 13px #666760 inset;
+    top: 150px;
+    right: 0px;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.btn{
+    display: inline-block;
+    font-family: arial !important;
+    font-weight: bolder;
+    font-size: 18px;
+    border: none;
+    padding: 10px;
+    border-radius: 7px;
+    background-color: #5f6059;
+    color: #ededed;
+    box-shadow: 0 0 10px #000 inset;
+    text-shadow: 0 0 2px #000;
+    cursor: pointer;
+    z-index: 1;
+}
+input[type='button']:hover,.btn:hover{
+    box-shadow: 0 0 10px #000 inset;
+    text-shadow: -2px -2px 2px #000;
+}
+.showControlButtons{
+    animation-name: show;
+    animation-duration: 2s;
+    animation-play-state: start;
+    opacity: 1;
+}
+.hideControlButtons{
+    animation-name: hide;
+    animation-duration: 2s;
+    animation-play-state: start;
+    opacity: 0;
+}
+
+@keyframes show {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}
+@keyframes hide {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+    
+}
